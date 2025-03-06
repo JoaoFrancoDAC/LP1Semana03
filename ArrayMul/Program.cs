@@ -15,17 +15,16 @@ namespace ArrayMul
             for (int i = 0; i < 6; i++)
             {
                 float.TryParse(args[i], NumberStyles.Float, CultureInfo.InvariantCulture, out valores[i]);	
-                
             }
 
             
-            float[,] A = {
+            float[,] matriz = {
                 { valores[0], valores[1] },
                 { valores[2], valores[3] }
             };
 
             
-            float[] b = { valores[4], valores[5] };
+            float[] vetor = { valores[4], valores[5] };
 
             
             float[] resultado = new float[2];
@@ -35,7 +34,7 @@ namespace ArrayMul
             {
                 for (int j = 0; j < 2; j++) 
                 {
-                    resultado[i] += A[i, j] * b[j];
+                    resultado[i] += matriz[i, j] * vetor[j];
                 }
             }
 
