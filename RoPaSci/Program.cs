@@ -29,20 +29,23 @@ namespace RoPaSci
 
         private static GameStatus RockPaperScissors(GameItem player1, GameItem player2)
         {
+            GameStatus result;
+
             if (player1 == player2)
             {
-                return GameStatus.Draw;
+                result = GameStatus.Draw;
             }
             if (((player1 == GameItem.Rock && player2 == GameItem.Scissors)) ||
                 ((player1 == GameItem.Scissors && player2 == GameItem.Paper)) ||
                 ((player1 == GameItem.Paper) && (player2 == GameItem.Rock)))
             {
-                return GameStatus.Player1Wins;
+                result = GameStatus.Player1Wins;
             }
             else
             {
-                return GameStatus.Player2Wins;
+                result = GameStatus.Player2Wins;
             }
+            return result;
         }
     }
 }
